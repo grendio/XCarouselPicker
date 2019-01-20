@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
@@ -11,8 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
             <connections>
+                <outlet property="customCollectionView" destination="F2C-NN-Red" id="name-outlet-F2C-NN-Red"/>
                 <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
-                <outlet property="tbCustom" destination="clz-Yr-2GN" id="name-outlet-clz-Yr-2GN"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -20,17 +20,23 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="clz-Yr-2GN">
-                    <rect key="frame" x="67" y="269" width="241" height="129"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="F2C-NN-Red">
+                    <rect key="frame" x="67" y="114" width="241" height="439"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </tableView>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SCx-gO-PiE">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="clz-Yr-2GN" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="67" id="PT9-oo-ONc"/>
-                <constraint firstItem="clz-Yr-2GN" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="Tqv-da-QzN"/>
-                <constraint firstItem="clz-Yr-2GN" firstAttribute="centerY" secondItem="2" secondAttribute="centerY" id="YgT-ro-OJh"/>
-                <constraint firstItem="clz-Yr-2GN" firstAttribute="top" secondItem="2" secondAttribute="top" constant="269" id="lVd-fT-3en"/>
+                <constraint firstItem="F2C-NN-Red" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="67" id="EYx-Cy-QdP"/>
+                <constraint firstItem="F2C-NN-Red" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="baz-6A-3Eg"/>
+                <constraint firstItem="F2C-NN-Red" firstAttribute="centerY" secondItem="2" secondAttribute="centerY" id="hbS-KV-Bmg"/>
+                <constraint firstAttribute="bottom" secondItem="F2C-NN-Red" secondAttribute="bottom" constant="114" id="lmy-gY-G23"/>
             </constraints>
         </view>
     </objects>

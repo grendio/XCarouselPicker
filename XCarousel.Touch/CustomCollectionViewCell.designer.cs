@@ -10,18 +10,18 @@ using System.CodeDom.Compiler;
 
 namespace XCarousel.Touch
 {
-    [Register ("CustomViewCell")]
-    partial class CustomViewCell
+    [Register ("CustomCollectionViewCell")]
+    partial class CustomCollectionViewCell
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lbCustomValue { get; set; }
+        UIKit.UILabel lbCustom { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (lbCustomValue != null) {
-                lbCustomValue.Dispose ();
-                lbCustomValue = null;
+            if (lbCustom != null) {
+                lbCustom.Dispose ();
+                lbCustom = null;
             }
         }
     }

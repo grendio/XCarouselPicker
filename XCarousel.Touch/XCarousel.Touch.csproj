@@ -92,8 +92,8 @@
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
-    <InterfaceDefinition Include="CustomViewCell.xib" />
     <InterfaceDefinition Include="MainViewController.xib" />
+    <InterfaceDefinition Include="CustomCollectionViewCell.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -102,15 +102,16 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="CustomTableSource.cs" />
-    <Compile Include="CustomViewCell.cs" />
-    <Compile Include="CustomViewCell.designer.cs">
-      <DependentUpon>CustomViewCell.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainViewController.cs" />
     <Compile Include="MainViewController.designer.cs">
       <DependentUpon>MainViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomCollectionViewCell.cs" />
+    <Compile Include="CustomCollectionViewCell.designer.cs">
+      <DependentUpon>CustomCollectionViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomCollectionViewDataSource.cs" />
+    <Compile Include="CustomFlowLayout.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

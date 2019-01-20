@@ -16,13 +16,13 @@ namespace XCarousel.Touch
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITableView tbCustom { get; set; }
+        UIKit.UICollectionView customCollectionView { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (tbCustom != null) {
-                tbCustom.Dispose ();
-                tbCustom = null;
+            if (customCollectionView != null) {
+                customCollectionView.Dispose ();
+                customCollectionView = null;
             }
         }
     }
