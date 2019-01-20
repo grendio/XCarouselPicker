@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="Three_Items" format="float" type="dimen">1.5</item>
+    <item name="Five_Items" format="float" type="dimen">1.25</item>
+    <item name="Seven_Items" format="float" type="dimen">1.16</item>
+</resources>
