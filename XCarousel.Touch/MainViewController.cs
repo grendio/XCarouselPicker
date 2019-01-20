@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UIKit;
+﻿using UIKit;
 
 namespace XCarousel.Touch
 {
@@ -9,18 +8,15 @@ namespace XCarousel.Touch
         {
             base.ViewDidLoad();
 
-            var tableData = new List<string>();
-
-            tableData.Add("Vegetables");
-            tableData.Add("Fruits");
-            tableData.Add("Flower Buds");
-            tableData.Add("Legumes");
-            tableData.Add("Bulbs");
-            tableData.Add("Tubers");
-
-            tbCustom.Source = new CustomTableSource(tableData);
             customCollectionView.RegisterNibForCell(CustomCollectionViewCell.Nib, CustomCollectionViewCell.Key);
-            customCollectionView.DataSource = new CustomCollectionViewDataSource();
+            this.customCollectionView.CollectionViewLayout = new CustomFlowLayout();
+            this.customCollectionView.DataSource = new CustomCollectionViewDataSource();
+            this.customCollectionView.DecelerationRate = UIScrollView.DecelerationRateFast;
+
+            //var insets = this.customCollectionView.ContentInset;
+            //insets.Left = 10;
+            //insets.Right = 10;
+            //this.customCollectionView.ContentInset = insets;
         }
     }
 }
