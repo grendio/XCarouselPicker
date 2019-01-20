@@ -19,6 +19,8 @@ namespace XCarousel.Touch
             tableData.Add("Tubers");
 
             tbCustom.Source = new CustomTableSource(tableData);
+            customCollectionView.RegisterNibForCell(CustomCollectionViewCell.Nib, CustomCollectionViewCell.Key);
+            customCollectionView.DataSource = new CustomCollectionViewDataSource();
         }
     }
 }
