@@ -4,7 +4,7 @@
               android:orientation="vertical" 
               android:layout_width="match_parent" 
               android:layout_height="match_parent"
-              android:background="@color/primary_material_light">
+              android:background="@color/material_grey_300">
     
         <XCarousel.Droid.Views.XCarouselView
                 android:id="@+id/picker"

@@ -34,10 +34,7 @@ namespace XCarousel.Droid.Transformers
             page.Elevation = 1 - Math.Abs(position);
             page.TranslationZ = 1 - Math.Abs(position);
 
-            var color = Color.Gray;
             color.A = (byte) (255 * (Math.Abs(position)));
-
-            page.FindViewById<ImageView>(Resource.Id.imageView).SetColorFilter(color, PorterDuff.Mode.Overlay);
         }
     }
 }
