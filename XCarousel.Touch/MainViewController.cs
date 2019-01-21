@@ -9,14 +9,11 @@ namespace XCarousel.Touch
             base.ViewDidLoad();
 
             customCollectionView.RegisterNibForCell(CustomCollectionViewCell.Nib, CustomCollectionViewCell.Key);
-            this.customCollectionView.CollectionViewLayout = new CustomFlowLayout();
-            this.customCollectionView.DataSource = new CustomCollectionViewDataSource();
-            this.customCollectionView.DecelerationRate = UIScrollView.DecelerationRateFast;
-
-            //var insets = this.customCollectionView.ContentInset;
-            //insets.Left = 10;
-            //insets.Right = 10;
-            //this.customCollectionView.ContentInset = insets;
+            customCollectionView.CollectionViewLayout = new CustomFlowLayout();
+            customCollectionView.Delegate = new CustomCollectionViewDelegate();
+            customCollectionView.DataSource = new CustomCollectionViewDataSource();
+            customCollectionView.DecelerationRate = UIScrollView.DecelerationRateFast;
+            customCollectionView.AllowsMultipleSelection = true;
         }
     }
 }

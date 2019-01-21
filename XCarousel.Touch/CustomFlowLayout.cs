@@ -8,7 +8,7 @@ namespace XCarousel.Touch
     {
         public CustomFlowLayout()
         {
-            this.ItemSize = new CGSize(50, 50);
+            this.ItemSize = new CGSize(100, 150);
             this.ScrollDirection = UICollectionViewScrollDirection.Horizontal;
         }
 

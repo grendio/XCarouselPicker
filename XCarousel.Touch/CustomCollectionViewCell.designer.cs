@@ -15,10 +15,19 @@ namespace XCarousel.Touch
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView imgBackground { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lbCustom { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
+            if (imgBackground != null) {
+                imgBackground.Dispose ();
+                imgBackground = null;
+            }
+
             if (lbCustom != null) {
                 lbCustom.Dispose ();
                 lbCustom = null;
