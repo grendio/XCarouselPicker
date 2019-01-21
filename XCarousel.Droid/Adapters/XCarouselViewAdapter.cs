@@ -22,6 +22,7 @@ namespace XCarousel.Droid.Adapters
 
         public XCarouselViewAdapter(Context context, List<PickerItem> items, int drawable)
         {
+
             Context = context;
             Drawable = drawable;
             Items = items;

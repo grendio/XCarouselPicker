@@ -1,16 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
               xmlns:app="http://schemas.android.com/res-auto"
               android:orientation="vertical" 
               android:layout_width="match_parent" 
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:background="@color/primary_material_light">
     
         <XCarousel.Droid.Views.XCarouselView
                 android:id="@+id/picker"
-                android:layout_width="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#CCC"
-                app:items_visible="three">
+                app:items_visible="five">
         </XCarousel.Droid.Views.XCarouselView>
     
-</LinearLayout>
+</RelativeLayout>
