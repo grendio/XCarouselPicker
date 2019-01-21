@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Android.App;
 using Android.OS;
+using Android.Views;
 using XCarousel.Droid.Adapters;
 using XCarousel.Droid.Interfaces;
 using XCarousel.Droid.Models;
@@ -21,12 +22,16 @@ namespace XCarousel.Droid
             SetContentView(Resource.Layout.Main);
             picker = FindViewById<XCarouselView>(Resource.Id.picker);
 
-            var textItems = new List<PickerItem>();
-            textItems.Add(new TextItem("TEST1", 20));
-            textItems.Add(new TextItem("TEST2", 20));
-            textItems.Add(new TextItem("TEST3", 20));
 
-            var adapter = new XCarouselViewAdapter(this, textItems, 0);
+            var products = new List<PickerItem>();
+
+            products.Add(new DrawableItem(Resource.Drawable.CoffeeAsset));
+            products.Add(new DrawableItem(Resource.Drawable.CoffeeAsset));
+            products.Add(new DrawableItem(Resource.Drawable.CoffeeAsset));
+            products.Add(new DrawableItem(Resource.Drawable.CoffeeAsset));
+            products.Add(new DrawableItem(Resource.Drawable.CoffeeAsset));
+
+            var adapter = new XCarouselViewAdapter(this, products, 0);
             picker.Adapter = adapter;
         }
     }

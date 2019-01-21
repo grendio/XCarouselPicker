@@ -76,7 +76,7 @@ namespace XCarousel.Droid.Views
 
             base.OnMeasure(widthMeasureSpec, heightMeasureSpec);
             var width = MeasuredWidth;
-            PageMargin = (int)(-width / Divisor);
+            PageMargin = (int)(-width / Divisor) - 250;
         }
 
         public override PagerAdapter Adapter
