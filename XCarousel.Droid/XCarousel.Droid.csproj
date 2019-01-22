@@ -104,7 +104,7 @@
     <AndroidResource Include="Resources\layout\Page.axml" />
     <AndroidResource Include="Resources\values\attrs.xml" />
     <AndroidResource Include="Resources\values\dimens.xml" />
-    <AndroidResource Include="Resources\drawable\CoffeeAsset.png" />
+    <AndroidResource Include="Resources\drawable\CoffeCup.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\mipmap-hdpi\" />

@@ -25,11 +25,13 @@ namespace XCarousel.Droid
 
             var products = new List<PickerItem>();
 
-            products.Add(new DrawableItem(Resource.Drawable.CoffeeAsset));
-            products.Add(new DrawableItem(Resource.Drawable.CoffeeAsset));
-            products.Add(new DrawableItem(Resource.Drawable.CoffeeAsset));
-            products.Add(new DrawableItem(Resource.Drawable.CoffeeAsset));
-            products.Add(new DrawableItem(Resource.Drawable.CoffeeAsset));
+            products.Add(new DrawableItem(Resource.Drawable.CoffeCup));
+            products.Add(new DrawableItem(Resource.Drawable.CoffeCup));
+            products.Add(new DrawableItem(Resource.Drawable.CoffeCup));
+            products.Add(new DrawableItem(Resource.Drawable.CoffeCup));
+            products.Add(new DrawableItem(Resource.Drawable.CoffeCup));
+            products.Add(new DrawableItem(Resource.Drawable.CoffeCup));
+            products.Add(new DrawableItem(Resource.Drawable.CoffeCup));
 
             var adapter = new XCarouselViewAdapter(this, products, 0);
             picker.Adapter = adapter;

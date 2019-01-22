@@ -1,7 +1,9 @@
 ﻿using System;
 using Android.Content;
+using Android.Content.Res;
 using Android.Graphics;
 using Android.Support.V4.View;
+using Android.Support.V4.Widget;
 using Android.Views;
 using Android.Widget;
 using static Android.Support.V4.View.ViewPager;
@@ -34,7 +36,20 @@ namespace XCarousel.Droid.Transformers
             page.Elevation = 1 - Math.Abs(position);
             page.TranslationZ = 1 - Math.Abs(position);
 
-            color.A = (byte) (255 * (Math.Abs(position)));
+            var img = page.FindViewById<ImageView>(Resource.Id.imageView);
+
+            var color = Color.ParseColor("#d3b49b");
+
+            if (Math.Abs(position) >= 0.4)
+            { 
+                color.A = 255;
+            }
+            else
+            {
+                color.A = (byte) (580 * Math.Abs(position));
+            }
+            ImageViewCompat.SetImageTintMode(img, PorterDuff.Mode.SrcAtop);
+            ImageViewCompat.SetImageTintList(img, ColorStateList.ValueOf(color));
         }
     }
 }
