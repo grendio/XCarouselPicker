@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XCarousel.Touch", "XCarouse
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XCarousel.Droid", "XCarousel.Droid\XCarousel.Droid.csproj", "{DAD3C796-D832-47C4-AA21-3FD385C2AC8A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XCarousel.Droid.Sample", "XCarousel.Droid.Sample\XCarousel.Droid.Sample.csproj", "{9D20B816-3A5C-4766-BE81-3A63B7678E95}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -29,5 +31,13 @@ Global
 		{DAD3C796-D832-47C4-AA21-3FD385C2AC8A}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{DAD3C796-D832-47C4-AA21-3FD385C2AC8A}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{DAD3C796-D832-47C4-AA21-3FD385C2AC8A}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{9D20B816-3A5C-4766-BE81-3A63B7678E95}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{9D20B816-3A5C-4766-BE81-3A63B7678E95}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{9D20B816-3A5C-4766-BE81-3A63B7678E95}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{9D20B816-3A5C-4766-BE81-3A63B7678E95}.Release|iPhone.Build.0 = Release|Any CPU
+		{9D20B816-3A5C-4766-BE81-3A63B7678E95}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{9D20B816-3A5C-4766-BE81-3A63B7678E95}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{9D20B816-3A5C-4766-BE81-3A63B7678E95}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{9D20B816-3A5C-4766-BE81-3A63B7678E95}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 EndGlobal
