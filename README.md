@@ -1,1 +1,4 @@
 # XCarousel
+
+## Preview
+![](carouselPicker.gif)
