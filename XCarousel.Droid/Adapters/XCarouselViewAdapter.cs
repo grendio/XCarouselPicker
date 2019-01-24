@@ -12,7 +12,20 @@ namespace XCarousel.Droid.Adapters
 {
     public class XCarouselViewAdapter : PagerAdapter
     {
-        List<PickerItem> Items { get; set; } = new List<PickerItem>();
+        private List<PickerItem> items;
+
+        public List<PickerItem> Items 
+        { 
+            get
+            {
+                return items;
+            }
+            set
+            {
+                items = value;
+                NotifyDataSetChanged();
+            }
+        }
 
         public Context Context { get; set; }
 
@@ -25,7 +38,11 @@ namespace XCarousel.Droid.Adapters
 
             Context = context;
             Drawable = drawable;
-            Items = items;
+
+            if (items != null)
+                Items = items;
+            else
+                Items = new List<PickerItem>();
 
             if (Drawable == 0)
                 Drawable = Resource.Layout.Page;
@@ -34,7 +51,7 @@ namespace XCarousel.Droid.Adapters
 
         public override Object InstantiateItem(ViewGroup container, int position)
         {
-            var view = LayoutInflater.From(Context).Inflate(Drawable, null);
+            var view = LayoutInflater.From(container.Context).Inflate(Drawable, null);
             var imageView = view.FindViewById<ImageView>(Resource.Id.imageView);
             var textView = view.FindViewById<TextView>(Resource.Id.textView);
 
@@ -54,11 +71,6 @@ namespace XCarousel.Droid.Adapters
                     imageView.Visibility = ViewStates.Gone;
                     textView.Visibility = ViewStates.Visible;
                     textView.Text = pickerItem.Text;
-
-                    //if(TextColor != 0)
-                    //{
-                    //    textView.SetTextColor(TextColor);
-                    //}
 
                     var textSize = (pickerItem as TextItem).TextSize;
 

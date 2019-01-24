@@ -10,7 +10,7 @@ namespace XCarousel.Droid.Models
         public int Drawable { get => 0; set => throw new System.NotImplementedException(); }
         public bool HasDrawable { get => false; set => throw new System.NotImplementedException(); }
 
-        public TextItem(string text, int textSize)
+        public TextItem(string text, int textSize, int id)
         {
             Text = text;
             TextSize = textSize;

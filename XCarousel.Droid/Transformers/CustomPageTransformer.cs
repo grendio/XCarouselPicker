@@ -14,8 +14,12 @@ namespace XCarousel.Droid.Transformers
     {
         private ViewPager viewPager;
 
+        public string FadeColor { get; set; }
+
         public CustomPageTransformer(Context context)
         {
+            if(String.IsNullOrEmpty(FadeColor))
+                FadeColor = "#ecf0f1";
         }
 
         public IntPtr Handle => base.Handle;
@@ -31,6 +35,7 @@ namespace XCarousel.Droid.Transformers
             {
                 viewPager = page.Parent as ViewPager;
             }
+
             page.ScaleX = 1 - Math.Abs(position);
             page.ScaleY = 1 - Math.Abs(position);
             page.Elevation = 1 - Math.Abs(position);
@@ -38,7 +43,7 @@ namespace XCarousel.Droid.Transformers
 
             var img = page.FindViewById<ImageView>(Resource.Id.imageView);
 
-            var color = Color.ParseColor("#d3b49b");
+            var color = Color.ParseColor(FadeColor);
 
             if (Math.Abs(position) >= 0.4)
             { 

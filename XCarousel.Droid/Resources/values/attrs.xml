@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="XCarousel">
-        <attr name="items_visible" />
+        <attr name="itemsVisible" />
+        <attr name="fadeColor" format="string"/>
     </declare-styleable>
-    <attr name="items_visible" format="enum">
+    <attr name="itemsVisible" format="enum">
         <enum name="Three" value="3" />
         <enum name="Five" value="5" />
         <enum name="Seven" value="7" />

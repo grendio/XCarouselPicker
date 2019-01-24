@@ -1,15 +1,48 @@
-﻿using Android.Content;
+﻿using System.Collections.Generic;
+using Android.Content;
 using Android.Content.Res;
 using Android.Support.V4.View;
 using Android.Util;
 using Android.Views;
+using XCarousel.Droid.Adapters;
+using XCarousel.Droid.Interfaces;
 using XCarousel.Droid.Transformers;
 
 namespace XCarousel.Droid.Views
 {
     public class XCarouselView : ViewPager
     {
+        public int Selected { get; set; }
+
+        public string FadeColor 
+        { 
+            get
+            {
+                return pageTransformer.FadeColor;
+            }
+            set
+            {
+                pageTransformer.FadeColor = value;
+            }
+        }
+
+        CustomPageTransformer pageTransformer;
+
+        public List<PickerItem> Items
+        {
+            get
+            {
+                return ((XCarouselViewAdapter)Adapter).Items;
+            }
+            set
+            {
+                ((XCarouselViewAdapter)Adapter).Items = value;
+                OffscreenPageLimit = value.Count;
+            }
+        }
+
         public int ItemsVisible { get; set; } = 3;
+
         public float Divisor { get; set; }
 
         public XCarouselView(Context context) : base(context, null) { }
@@ -18,6 +51,7 @@ namespace XCarousel.Droid.Views
         {
             InitAttributes(context, attrs);
             Init();
+            PageSelected += (sender, e) => { Selected = e.Position; };
         }
 
         private void InitAttributes(Context context, IAttributeSet attrs)
@@ -25,7 +59,7 @@ namespace XCarousel.Droid.Views
             if(attrs != null)
             {
                 TypedArray array = context.ObtainStyledAttributes(attrs, Resource.Styleable.XCarousel);
-                ItemsVisible = array.GetInteger(Resource.Styleable.XCarousel_items_visible, ItemsVisible);
+                ItemsVisible = array.GetInteger(Resource.Styleable.XCarousel_itemsVisible, ItemsVisible);
 
                 switch(ItemsVisible)
                 {
@@ -53,7 +87,11 @@ namespace XCarousel.Droid.Views
 
         private void Init()
         {
-            SetPageTransformer(false, new CustomPageTransformer(Context));
+            pageTransformer = new CustomPageTransformer(Context);
+
+            SetPageTransformer(false, pageTransformer);
+            Adapter = new XCarouselViewAdapter(Context, null, 0);
+
             SetClipChildren(false);
             SetFadingEdgeLength(0);
         }
@@ -76,7 +114,7 @@ namespace XCarousel.Droid.Views
 
             base.OnMeasure(widthMeasureSpec, heightMeasureSpec);
             var width = MeasuredWidth;
-            PageMargin = (int)(-width / Divisor) - 250;
+            PageMargin = (int)(-width / Divisor) - 265;
         }
 
         public override PagerAdapter Adapter
