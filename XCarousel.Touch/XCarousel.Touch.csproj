@@ -86,9 +86,14 @@
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\demoImage.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\demoImage.imageset\CoffeeAsset.png" />
+    <ImageAsset Include="Assets.xcassets\demoImage.imageset\CoffeeAsset%402x.png" />
+    <ImageAsset Include="Assets.xcassets\demoImage.imageset\CoffeeAsset%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Assets.xcassets\demoImage.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -112,7 +117,6 @@
     </Compile>
     <Compile Include="CustomCollectionViewDataSource.cs" />
     <Compile Include="CustomFlowLayout.cs" />
-    <Compile Include="CustomCollectionViewDelegate.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

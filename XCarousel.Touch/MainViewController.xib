@@ -23,9 +23,6 @@
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="F2C-NN-Red">
                     <rect key="frame" x="0.0" y="233.5" width="375" height="200"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="200" id="MHp-I1-44p"/>
-                    </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SCx-gO-PiE">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -36,6 +33,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="F2C-NN-Red" firstAttribute="top" secondItem="2" secondAttribute="top" constant="233.5" id="RDT-8h-Xxf"/>
                 <constraint firstItem="F2C-NN-Red" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="baz-6A-3Eg"/>
                 <constraint firstItem="F2C-NN-Red" firstAttribute="centerY" secondItem="2" secondAttribute="centerY" id="hbS-KV-Bmg"/>
                 <constraint firstItem="F2C-NN-Red" firstAttribute="width" secondItem="2" secondAttribute="width" id="xPj-yr-eEK"/>
