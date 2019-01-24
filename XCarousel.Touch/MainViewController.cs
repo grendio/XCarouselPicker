@@ -30,7 +30,29 @@ namespace XCarousel.Touch
                 if (customCollectionView.CellForItem(visibleIndexPath) != null)
                 {
                     var middleCell = customCollectionView.CellForItem(visibleIndexPath);
-                    middleCell.Transform = CGAffineTransform.MakeScale(1, new nfloat(1.5));
+                    middleCell.Transform = CGAffineTransform.MakeScale(1, new nfloat(1.6));
+                }
+
+                foreach (var cell in cells)
+                {
+                    cell.ContentView.Alpha = 1;
+                    var path = customCollectionView.IndexPathForCell(cell);
+                    var difference = path.LongRow - visibleIndexPath.LongRow;
+                    if (difference == 1 || difference == -1)
+                    {
+                        cell.Transform = CGAffineTransform.MakeScale(1, new nfloat(1.4));
+                        cell.ContentView.Alpha = new nfloat(0.7);
+                    }
+                    else if (difference == 2 || difference == -2)
+                    {
+                        cell.Transform = CGAffineTransform.MakeScale(1, new nfloat(1.2));
+                        cell.ContentView.Alpha = new nfloat(0.5);
+                    }
+                    else if (difference != 0)
+                    {
+                        cell.Transform = CGAffineTransform.MakeScale(1, 1);
+                        cell.ContentView.Alpha = new nfloat(0.2);
+                    }
                 }
             }
         }
