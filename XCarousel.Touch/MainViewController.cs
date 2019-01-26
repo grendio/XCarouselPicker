@@ -10,11 +10,14 @@ namespace XCarousel.Touch
         {
             base.ViewDidLoad();
 
+            var viewWidth = View.Frame.Size.Width;
+
             customCollectionView.RegisterNibForCell(CustomCollectionViewCell.Nib, CustomCollectionViewCell.Key);
             customCollectionView.CollectionViewLayout = new CustomFlowLayout(50, 100);
-            customCollectionView.Frame = new CGRect(customCollectionView.Frame.Location, new CGSize(View.Frame.Size.Width, 100));
+            customCollectionView.Frame = new CGRect(customCollectionView.Frame.Location, new CGSize(viewWidth, 100));
             customCollectionView.DataSource = new CustomCollectionViewDataSource();
             customCollectionView.Scrolled += CustomCollectionView_Scrolled;
+            customCollectionView.ContentInset = new UIEdgeInsets(0, viewWidth/2, 0, -viewWidth/2);
         }
 
         void CustomCollectionView_Scrolled(object sender, EventArgs e)
