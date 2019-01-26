@@ -94,6 +94,8 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Assets.xcassets\demoImage.imageset\" />
+    <Folder Include="Views\" />
+    <Folder Include="Transformers\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -116,7 +118,11 @@
       <DependentUpon>CustomCollectionViewCell.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomCollectionViewDataSource.cs" />
-    <Compile Include="CustomFlowLayout.cs" />
+    <Compile Include="Views\XCarouselView.cs" />
+    <Compile Include="Views\XCarouselView.designer.cs">
+      <DependentUpon>XCarouselView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transformers\CustomFlowLayout.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

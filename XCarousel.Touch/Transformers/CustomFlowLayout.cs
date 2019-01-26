@@ -3,7 +3,7 @@ using CoreGraphics;
 using Foundation;
 using UIKit;
 
-namespace XCarousel.Touch
+namespace XCarousel.Touch.Transformers
 {
     public class CustomFlowLayout : UICollectionViewFlowLayout
     {
@@ -11,25 +11,6 @@ namespace XCarousel.Touch
         {
             ItemSize = new CGSize(width, height);
             ScrollDirection = UICollectionViewScrollDirection.Horizontal;
-        }
-
-        public override CGSize CollectionViewContentSize
-        {
-            get
-            {
-                var xSize = CollectionView.NumberOfItemsInSection(0) * ItemSize.Width;
-                var ySize = CollectionView.NumberOfSections() * ItemSize.Height;
-
-                var contentSize = new CGSize(xSize, ySize);
-
-                if (CollectionView.Bounds.Size.Width > contentSize.Width)
-                    contentSize.Width = CollectionView.Bounds.Size.Width;
-
-                if (CollectionView.Bounds.Size.Height > contentSize.Height)
-                    contentSize.Height = CollectionView.Bounds.Size.Height;
-
-                return contentSize;
-            }
         }
 
         public override UICollectionViewLayoutAttributes[] LayoutAttributesForElementsInRect(CGRect rect)

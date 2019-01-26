@@ -16,7 +16,7 @@ namespace XCarousel.Touch
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UICollectionView customCollectionView { get; set; }
+        XCarousel.Touch.Views.XCarouselView customCollectionView { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
