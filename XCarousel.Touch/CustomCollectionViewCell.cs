@@ -1,4 +1,5 @@
 ﻿using System;
+using CoreGraphics;
 using Foundation;
 using UIKit;
 
@@ -20,6 +21,11 @@ namespace XCarousel.Touch
         public void UpdateCell(string text)
         {
             lbCustom.Text = text;
+        }
+
+        public override void ApplyLayoutAttributes(UICollectionViewLayoutAttributes layoutAttributes)
+        {
+            Layer.ZPosition = new nfloat(layoutAttributes.ZIndex);
         }
     }
 }
