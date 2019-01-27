@@ -7,6 +7,8 @@ namespace XCarousel.Touch.Views
 {
     public partial class XCarouselView : UICollectionView
     {
+        private UIImage baseCellImage { get; set; }
+
         protected internal XCarouselView(IntPtr handle) : base(handle)
         {
             //TODO Give those values as parameter somehow
@@ -36,36 +38,75 @@ namespace XCarousel.Touch.Views
 
                     foreach (var cell in VisibleCells)
                     {
-                        cell.ContentView.Alpha = 1;
                         var path = IndexPathForCell(cell);
                         var difference = path.LongRow - visibleIndexPath.LongRow;
 
                         if (difference == 0)
                         {
                             cell.Layer.ZPosition = int.MaxValue;
+
+                            foreach (var subView in cell.ContentView.Subviews)
+                            {
+                                if (subView.GetType() == typeof(UIImageView))
+                                {
+                                    if (baseCellImage == null)
+                                        baseCellImage = (subView as UIImageView).Image;
+                                    (subView as UIImageView).Image = baseCellImage;
+                                }
+                            }
                         }
 
                         if (difference == 1 || difference == -1)
-                        {
-                            cell.Transform = CGAffineTransform.MakeScale(new nfloat(1.2), new nfloat(1.2));
-                            cell.Layer.ZPosition = int.MinValue + 2;
-                            //TODO cell.ContentView.Alpha = new nfloat(0.7);
-                        }
+                            UpdateCellLayer(cell, new nfloat(1.2), new nfloat(1.2), int.MinValue + 2, new nfloat(0.3));
                         else if (difference == 2 || difference == -2)
-                        {
-                            cell.Transform = CGAffineTransform.MakeScale(new nfloat(1.1), new nfloat(1.1));
-                            cell.Layer.ZPosition = int.MinValue + 1;
-                            //TODO cell.ContentView.Alpha = new nfloat(0.5); 
-                        }
+                            UpdateCellLayer(cell, new nfloat(1.1), new nfloat(1.1), int.MinValue + 1, new nfloat(0.5));
                         else if (difference != 0)
-                        {
-                            cell.Transform = CGAffineTransform.MakeScale(1, 1);
-                            cell.Layer.ZPosition = int.MinValue;
-                            //TODO cell.ContentView.Alpha = new nfloat(0.2);
-                        }
+                            UpdateCellLayer(cell, 1, 1, int.MinValue, new nfloat(0.7));
                     }
                 }, null);
             }
+        }
+
+        private void UpdateCellLayer(UICollectionViewCell cell, nfloat sx, nfloat sy, int zPosition, nfloat alpha)
+        {
+            cell.Transform = CGAffineTransform.MakeScale(sx, sy);
+            cell.Layer.ZPosition = zPosition;
+
+            foreach (var subView in cell.ContentView.Subviews)
+            {
+                if (subView.GetType() == typeof(UIImageView))
+                {
+                    //TODO replace hardcoded UIColor.White with class parameter in order to match any background color
+                    var newImage = ChangeImageColor(baseCellImage, alpha, UIColor.White);
+                    (subView as UIImageView).Image = newImage;
+                }
+            }
+        }
+
+        private UIImage ChangeImageColor(UIImage image, nfloat alpha, UIColor color)
+        {
+            var alphaColor = color.ColorWithAlpha(alpha);
+
+            UIGraphics.BeginImageContextWithOptions(image.Size, false, UIScreen.MainScreen.Scale);
+
+            var context = UIGraphics.GetCurrentContext();
+            alphaColor.SetFill();
+
+            context.TranslateCTM(0, image.Size.Height);
+            context.ScaleCTM(new nfloat(1.0), new nfloat(-1.0));
+            context.SetBlendMode(CGBlendMode.Lighten);
+
+            var rect = new CGRect(0, 0, image.Size.Width, image.Size.Height);
+            context.DrawImage(rect, image.CGImage);
+
+            context.SetBlendMode(CGBlendMode.SourceAtop);
+            context.AddRect(rect);
+            context.DrawPath(CGPathDrawingMode.Fill);
+
+            image = UIGraphics.GetImageFromCurrentImageContext();
+            UIGraphics.EndImageContext();
+
+            return image;
         }
     }
 }
