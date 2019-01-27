@@ -1,6 +1,4 @@
-﻿using System;
-
-using UIKit;
+﻿using UIKit;
 
 namespace XCarousel.Touch.Sample
 {
@@ -14,13 +12,9 @@ namespace XCarousel.Touch.Sample
         {
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
-        }
 
-        public override void DidReceiveMemoryWarning()
-        {
-            base.DidReceiveMemoryWarning();
-            // Release any cached data, images, etc that aren't in use.
+            customCollectionView.RegisterNibForCell(CustomCollectionViewCell.Nib, CustomCollectionViewCell.Key);
+            customCollectionView.DataSource = new CustomDataSource();
         }
     }
 }
-

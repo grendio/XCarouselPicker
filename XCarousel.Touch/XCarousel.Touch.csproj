@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProjectGuid>{61DC4D18-AF16-4AF2-BF29-A41BEA477EE0}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>XCarousel.Touch</RootNamespace>
     <AssemblyName>XCarousel.Touch</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
@@ -84,40 +84,10 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\demoImage.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\demoImage.imageset\CoffeeAsset.png" />
-    <ImageAsset Include="Assets.xcassets\demoImage.imageset\CoffeeAsset%402x.png" />
-    <ImageAsset Include="Assets.xcassets\demoImage.imageset\CoffeeAsset%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-    <Folder Include="Assets.xcassets\demoImage.imageset\" />
     <Folder Include="Views\" />
     <Folder Include="Transformers\" />
   </ItemGroup>
   <ItemGroup>
-    <InterfaceDefinition Include="LaunchScreen.storyboard" />
-    <InterfaceDefinition Include="MainViewController.xib" />
-    <InterfaceDefinition Include="CustomCollectionViewCell.xib" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Info.plist" />
-    <None Include="Entitlements.plist" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Main.cs" />
-    <Compile Include="AppDelegate.cs" />
-    <Compile Include="MainViewController.cs" />
-    <Compile Include="MainViewController.designer.cs">
-      <DependentUpon>MainViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomCollectionViewCell.cs" />
-    <Compile Include="CustomCollectionViewCell.designer.cs">
-      <DependentUpon>CustomCollectionViewCell.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomCollectionViewDataSource.cs" />
     <Compile Include="Views\XCarouselView.cs" />
     <Compile Include="Views\XCarouselView.designer.cs">
       <DependentUpon>XCarouselView.cs</DependentUpon>

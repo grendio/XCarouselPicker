@@ -8,7 +8,7 @@ using Foundation;
 using System;
 using System.CodeDom.Compiler;
 
-namespace XCarousel.Touch
+namespace XCarousel.Touch.Sample
 {
     [Register ("CustomCollectionViewCell")]
     partial class CustomCollectionViewCell

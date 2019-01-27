@@ -89,13 +89,19 @@
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\demoImg.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\demoImg.imageset\CoffeeAsset.png" />
+    <ImageAsset Include="Assets.xcassets\demoImg.imageset\CoffeeAsset%402x.png" />
+    <ImageAsset Include="Assets.xcassets\demoImg.imageset\CoffeeAsset%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Assets.xcassets\demoImg.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="ViewController.xib" />
+    <InterfaceDefinition Include="CustomCollectionViewCell.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -108,6 +114,11 @@
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomCollectionViewCell.cs" />
+    <Compile Include="CustomCollectionViewCell.designer.cs">
+      <DependentUpon>CustomCollectionViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomDataSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XCarousel.Touch\XCarousel.Touch.csproj">

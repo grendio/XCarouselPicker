@@ -4,18 +4,18 @@ using Foundation;
 using ObjCRuntime;
 using UIKit;
 
-namespace XCarousel.Touch
+namespace XCarousel.Touch.Sample
 {
-    public class CustomCollectionViewDataSource : UICollectionViewDataSource
+    public class CustomDataSource : UICollectionViewDataSource
     {
         public List<int> Numbers { get; set; } = new List<int>();
 
-        public CustomCollectionViewDataSource()
+        public CustomDataSource()
         {
             // Initialize
 
             // Init numbers collection
-            for (int n = 0; n < 100; ++n)
+            for (int n = 0; n < 20; ++n)
             {
                 Numbers.Add(n);
             }
@@ -39,7 +39,6 @@ namespace XCarousel.Touch
 
             if (cell == null)
             {
-                cell = new CustomCollectionViewCell();
                 var views = NSBundle.MainBundle.LoadNib(CustomCollectionViewCell.Key, cell, null);
                 cell = Runtime.GetNSObject(views.ValueAt(0)) as CustomCollectionViewCell;
             }
@@ -47,20 +46,6 @@ namespace XCarousel.Touch
             cell.UpdateCell(Numbers[indexPath.Row] + "");
 
             return cell;
-        }
-
-        public override bool CanMoveItem(UICollectionView collectionView, NSIndexPath indexPath)
-        {
-            // We can always move items
-            return true;
-        }
-
-        public override void MoveItem(UICollectionView collectionView, NSIndexPath sourceIndexPath, NSIndexPath destinationIndexPath)
-        {
-            // Reorder our list of items
-            var item = Numbers[(int)sourceIndexPath.Item];
-            Numbers.RemoveAt((int)sourceIndexPath.Item);
-            Numbers.Insert((int)destinationIndexPath.Item, item);
         }
     }
 }
