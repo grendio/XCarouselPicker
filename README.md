@@ -3,6 +3,50 @@
 ## Preview
 ![](carouselPicker.gif)
 
+### Blogs
+
+https://butonium.com/custom-bottomsheet-xamarin/
+
+### Android
+
+#### Standard
+
+1. Add a new XCarouselView inside your Main layout file:
+
+```
+     <XCarousel.Droid.Views.XCarouselView
+            android:id="@+id/picker"
+            android:background="@android:color/transparent"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+    </XCarousel.Droid.Views.XCarouselView>
+```
+
+2. In your Activity you'll need to assign a Collection to this view:
+
+```
+    var picker = FindViewById<XCarouselView>(Resource.Id.picker);
+    
+    var products = new List<PickerItem>();
+
+    products.Add(new DrawableItem(Resource.Drawable.CoffeeAsset));
+    products.Add(new DrawableItem(Resource.Drawable.CoffeeAsset));
+    products.Add(new DrawableItem(Resource.Drawable.CoffeeAsset));
+    products.Add(new DrawableItem(Resource.Drawable.CoffeeAsset));
+    products.Add(new DrawableItem(Resource.Drawable.CoffeeAsset));
+    products.Add(new DrawableItem(Resource.Drawable.CoffeeAsset));
+    products.Add(new DrawableItem(Resource.Drawable.CoffeeAsset));
+
+    picker.Items = products;
+```
+
+3. And for the FadeEffect to take place you'll need to assign the desired FadeColor:
+
+```
+    picker.FadeColor = "#ecf0f1";
+```
+
 ### iOS
 
 #### Standard
