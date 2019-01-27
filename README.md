@@ -5,7 +5,7 @@
 
 ### Blogs
 
-https://butonium.com/custom-bottomsheet-xamarin/
+https://butonium.com/xamarin-carouselpicker/
 
 ### Android
 
