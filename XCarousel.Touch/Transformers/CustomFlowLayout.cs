@@ -1,14 +1,16 @@
 ﻿using System;
 using CoreGraphics;
-using Foundation;
 using UIKit;
 
 namespace XCarousel.Touch.Transformers
 {
     public class CustomFlowLayout : UICollectionViewFlowLayout
     {
-        public CustomFlowLayout(nfloat width, nfloat height)
+        private int overlapSize;
+
+        public CustomFlowLayout(int overlapSize, nfloat width, nfloat height)
         {
+            this.overlapSize = overlapSize;
             ItemSize = new CGSize(width, height);
             ScrollDirection = UICollectionViewScrollDirection.Horizontal;
         }
@@ -27,7 +29,7 @@ namespace XCarousel.Touch.Transformers
                     attributes.ZIndex = int.MaxValue; // Put the first cell on top of the stack
                 else
                 {
-                    xPosition -= 20 * attributes.IndexPath.Row;
+                    xPosition -= overlapSize * attributes.IndexPath.Row;
                     attributes.ZIndex = numberOfItems - attributes.IndexPath.Row; //Other cells below the first one
                 }
 
@@ -35,11 +37,6 @@ namespace XCarousel.Touch.Transformers
             }
 
             return attributesArray;
-        }
-
-        public override UICollectionViewLayoutAttributes LayoutAttributesForItem(NSIndexPath indexPath)
-        {
-            return LayoutAttributesForItem(indexPath);
         }
     }
 }

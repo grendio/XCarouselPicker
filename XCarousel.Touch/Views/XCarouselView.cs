@@ -9,12 +9,18 @@ namespace XCarousel.Touch.Views
     {
         private UIImage baseCellImage { get; set; }
 
+        public UIColor FadeColor { get; set; }
+
         protected internal XCarouselView(IntPtr handle) : base(handle)
         {
-            //TODO Give those values as parameter somehow
-            CollectionViewLayout = new CustomFlowLayout(50, 100);
             Scrolled += XCarouselView_Scrolled;
             ContentInset = new UIEdgeInsets(0, Frame.Width / 2, 0, -Frame.Width / 2);
+        }
+
+        public void InitPrerequisites(UIColor fadeColor, int overlapSize, nfloat cellWidth, nfloat cellHeight)
+        {
+            FadeColor = fadeColor;
+            CollectionViewLayout = new CustomFlowLayout(overlapSize, cellWidth, cellHeight);
         }
 
         /// <summary>
@@ -76,8 +82,7 @@ namespace XCarousel.Touch.Views
             {
                 if (subView.GetType() == typeof(UIImageView))
                 {
-                    //TODO replace hardcoded UIColor.White with class parameter in order to match any background color
-                    var newImage = ChangeImageColor(baseCellImage, alpha, UIColor.White);
+                    var newImage = ChangeImageColor(baseCellImage, alpha, FadeColor);
                     (subView as UIImageView).Image = newImage;
                 }
             }

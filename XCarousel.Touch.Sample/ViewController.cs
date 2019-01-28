@@ -15,6 +15,7 @@ namespace XCarousel.Touch.Sample
 
             customCollectionView.RegisterNibForCell(CustomCollectionViewCell.Nib, CustomCollectionViewCell.Key);
             customCollectionView.DataSource = new CustomDataSource();
+            customCollectionView.InitPrerequisites(UIColor.White, 20, 50, 100);
         }
     }
 }
