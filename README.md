@@ -3,11 +3,10 @@
 ## Preview
 ![](carouselPicker.gif)
 
-### Blogs
-
+## Blogs
 https://butonium.com/xamarin-carouselpicker/
 
-### Android
+## Android
 
 #### Standard
 
@@ -47,7 +46,7 @@ https://butonium.com/xamarin-carouselpicker/
     picker.FadeColor = "#ecf0f1";
 ```
 
-### iOS
+## iOS
 
 #### Standard
 
