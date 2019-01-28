@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata minClientVersion="">
+    <id>XCarouselPicker</id>
+    <version>0.0.1-beta</version>
+    <title>XCarouselPicker</title>
+    <authors>Grendio</authors>
+    <owners>Grendio</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/grendio/XCarouselPicker/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/grendio/XCarouselPicker</projectUrl>
+    <iconUrl>https://avatars1.githubusercontent.com/u/45300196</iconUrl>
+    <description>Carousel Picker component for Xamarin.Droid and Xamarin.iOS</description>
+    <summary>Carousel Picker component for Xamarin.Droid and Xamarin.iOS</summary>
+    <releaseNotes></releaseNotes>
+    <copyright></copyright>
+    <language>en-US</language>
+    <tags>carousel, picker, android, xamarin, ios</tags>
+    <dependencies>
+      <group targetFramework="Xamarin.iOS1.0" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="Xamarin.iOS" targetFramework="Xamarin.iOS1.0" />
+    </frameworkAssemblies>
+  </metadata>
+  <files>
+    <file src="XCarousel.Touch\bin\iPhoneSimulator\Debug\XCarousel.Touch.dll" target="lib\Xamarin.iOS1.0\XCarousel.Touch.dll" />
+  </files>
+</package>

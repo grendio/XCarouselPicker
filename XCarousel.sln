@@ -9,6 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XCarousel.Droid.Sample", "X
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XCarousel.Touch.Sample", "XCarousel.Touch.Sample\XCarousel.Touch.Sample.csproj", "{0CCCC7ED-A229-4E6B-A9B5-3BA560119517}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9A08B431-64C0-4F3F-A935-1AAC724F1A7F}"
+	ProjectSection(SolutionItems) = preProject
+		XCarousel.nuspec = XCarousel.nuspec
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
