@@ -4,8 +4,9 @@
 ![](carouselPicker.gif)
 
 ## Blogs
-https://butonium.com/xamarin-carouselpicker/
-https://alexandrustefan.com/xcarouselpicker/
+
+1. https://butonium.com/xamarin-carouselpicker/
+2. https://alexandrustefan.com/xcarouselpicker/
 
 ## Android
 
