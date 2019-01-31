@@ -5,6 +5,7 @@
 
 ## Blogs
 https://butonium.com/xamarin-carouselpicker/
+https://alexandrustefan.com/xcarouselpicker/
 
 ## Android
 
