@@ -1,5 +1,11 @@
 # XCarousel
 
+## Build Status
+
+| XBottomSheet.Touch  | XBottomSheet.Droid | .Touch.Sample  | .Droid.Sample |
+| ------------- | ------------- | ------------- | ------------- |
+|![Build status](https://build.appcenter.ms/v0.1/apps/561b6d5c-f52e-46cb-b97f-655044511616/branches/master/badge)|![Build status](https://build.appcenter.ms/v0.1/apps/8b739197-554d-40e1-b73c-7b19c87f4c19/branches/master/badge)|![Build status](https://build.appcenter.ms/v0.1/apps/e88b8cee-33be-4324-be8d-06e067577194/branches/master/badge)|![Build status](https://build.appcenter.ms/v0.1/apps/e535c92f-2f2a-4808-9e13-eab56e508d85/branches/master/badge)|
+
 ## Preview
 ![](carouselPicker.gif)
 
