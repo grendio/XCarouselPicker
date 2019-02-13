@@ -93,6 +93,7 @@
       <DependentUpon>XCarouselView.cs</DependentUpon>
     </Compile>
     <Compile Include="Transformers\CustomFlowLayout.cs" />
+    <Compile Include="Transformers\CustomViewDelegateFlowLayout.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
