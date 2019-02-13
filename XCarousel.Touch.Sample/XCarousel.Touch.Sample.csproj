@@ -85,6 +85,9 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
+    <Reference Include="XCarousel.Touch">
+      <HintPath>..\packages\XCarouselPicker.0.0.1-beta\lib\Xamarin.iOS1.0\XCarousel.Touch.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -106,6 +109,7 @@
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -119,12 +123,6 @@
       <DependentUpon>CustomCollectionViewCell.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomDataSource.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\XCarousel.Touch\XCarousel.Touch.csproj">
-      <Project>{61DC4D18-AF16-4AF2-BF29-A41BEA477EE0}</Project>
-      <Name>XCarousel.Touch</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
