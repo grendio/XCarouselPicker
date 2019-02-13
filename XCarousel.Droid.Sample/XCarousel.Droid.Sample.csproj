@@ -81,8 +81,9 @@
       <HintPath>..\packages\Xamarin.Android.Support.v7.AppCompat.27.0.2\lib\MonoAndroid81\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
     </Reference>
     <Reference Include="XCarousel.Droid">
-      <HintPath>..\XCarousel.Droid\bin\Debug\XCarousel.Droid.dll</HintPath>
+      <HintPath>..\packages\XCarouselPicker.0.0.1-beta\lib\monoandroid10\XCarousel.Droid.dll</HintPath>
     </Reference>
+    <Reference Include="Java.Interop" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
