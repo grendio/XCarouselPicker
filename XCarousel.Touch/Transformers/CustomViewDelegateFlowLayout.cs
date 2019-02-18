@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using CoreGraphics;
 using UIKit;
 
@@ -55,11 +56,13 @@ namespace XCarousel.Touch.Transformers
                         }
 
                         if (difference == 1 || difference == -1)
-                            UpdateCellLayer(cell, new nfloat(1.2), new nfloat(1.2), int.MinValue + 2, new nfloat(0.3));
+                            UpdateCellLayer(cell, new nfloat(1.3), new nfloat(1.3), int.MinValue + 3, new nfloat(0.3));
                         else if (difference == 2 || difference == -2)
-                            UpdateCellLayer(cell, new nfloat(1.1), new nfloat(1.1), int.MinValue + 1, new nfloat(0.5));
+                            UpdateCellLayer(cell, new nfloat(1.2), new nfloat(1.2), int.MinValue + 2, new nfloat(0.5));
+                        else if (difference == 3 || difference == -3)
+                            UpdateCellLayer(cell, new nfloat(1.1), new nfloat(1.1), int.MinValue + 1, new nfloat(0.7));
                         else if (difference != 0)
-                            UpdateCellLayer(cell, 1, 1, int.MinValue, new nfloat(0.7));
+                            UpdateCellLayer(cell, 1, 1, int.MinValue, 1);
                     }
                 }, null);
             }
@@ -72,7 +75,7 @@ namespace XCarousel.Touch.Transformers
 
             foreach (var subView in cell.ContentView.Subviews)
             {
-                if (subView.GetType() == typeof(UIImageView))
+                if (subView.GetType() == typeof(UIImageView) && baseCellImage != null)
                 {
                     var newImage = ChangeImageColor(baseCellImage, alpha, fadeColor);
                     (subView as UIImageView).Image = newImage;
