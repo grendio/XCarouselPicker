@@ -6,7 +6,7 @@ using UIKit;
 
 namespace XCarousel.Touch.Sample
 {
-    public class CustomDataSource : UICollectionViewDataSource
+    public class CustomDataSource : UICollectionViewSource
     {
         public List<int> Numbers { get; set; } = new List<int>();
 
@@ -46,6 +46,11 @@ namespace XCarousel.Touch.Sample
             cell.UpdateCell(Numbers[indexPath.Row] + "");
 
             return cell;
+        }
+
+        public override void ItemSelected(UICollectionView collectionView, NSIndexPath indexPath)
+        {
+            //base.ItemSelected(collectionView, indexPath);
         }
     }
 }

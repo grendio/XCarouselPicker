@@ -1,4 +1,5 @@
-﻿using UIKit;
+﻿using Foundation;
+using UIKit;
 
 namespace XCarousel.Touch.Sample
 {
@@ -11,11 +12,19 @@ namespace XCarousel.Touch.Sample
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            // Perform any additional setup after loading the view, typically from a nib.
 
             customCollectionView.RegisterNibForCell(CustomCollectionViewCell.Nib, CustomCollectionViewCell.Key);
-            customCollectionView.DataSource = new CustomDataSource();
+
+            var collectionViewSource = new CustomDataSource();
+            customCollectionView.Source = collectionViewSource;
             customCollectionView.InitPrerequisites(UIColor.White, 20, 50, 100);
+        }
+
+        public override void ViewDidLayoutSubviews()
+        {
+            base.ViewDidLayoutSubviews();
+            var indexPath = NSIndexPath.FromItemSection(9, 0);
+            customCollectionView.ScrollToItem(indexPath, UICollectionViewScrollPosition.CenteredHorizontally, true);
         }
     }
 }
