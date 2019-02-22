@@ -14,6 +14,10 @@
 1. https://butonium.com/xamarin-carouselpicker/
 2. https://alexandrustefan.com/xcarouselpicker/
 
+## Setup 
+
+On client projects install the nuget XCarouselPicker ([![NuGet](https://img.shields.io/nuget/v/XCarouselPicker.svg?label=NuGet)](https://www.nuget.org/packages/XCarouselPicker/)) and then follow the steps based on platform:
+
 ## Android
 
 #### Standard
