@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata minClientVersion="">
     <id>XCarouselPicker</id>
-    <version>0.0.2-beta</version>
+    <version>0.0.4-beta</version>
     <title>XCarouselPicker</title>
     <authors>Grendio</authors>
     <owners>Grendio</owners>

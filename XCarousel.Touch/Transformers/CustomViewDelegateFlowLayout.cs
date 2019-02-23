@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using CoreGraphics;
 using UIKit;
 
@@ -77,8 +76,16 @@ namespace XCarousel.Touch.Transformers
             {
                 if (subView.GetType() == typeof(UIImageView) && baseCellImage != null)
                 {
-                    var newImage = ChangeImageColor(baseCellImage, alpha, fadeColor);
-                    (subView as UIImageView).Image = newImage;
+                    if (alpha != 1)
+                    {
+                        var newImage = ChangeImageColor(baseCellImage, alpha, fadeColor);
+                        (subView as UIImageView).Image = newImage;
+                    }
+                    else
+                    {
+                        var newImage = ChangeImageToColor(baseCellImage, alpha, fadeColor);
+                        (subView as UIImageView).Image = newImage;
+                    }
                 }
             }
         }
@@ -91,7 +98,7 @@ namespace XCarousel.Touch.Transformers
 
             var context = UIGraphics.GetCurrentContext();
             alphaColor.SetFill();
-
+            
             context.TranslateCTM(0, image.Size.Height);
             context.ScaleCTM(new nfloat(1.0), new nfloat(-1.0));
             context.SetBlendMode(CGBlendMode.Lighten);
@@ -103,6 +110,18 @@ namespace XCarousel.Touch.Transformers
             context.AddRect(rect);
             context.DrawPath(CGPathDrawingMode.Fill);
 
+            image = UIGraphics.GetImageFromCurrentImageContext();
+            UIGraphics.EndImageContext();
+
+            return image;
+        }
+
+        private UIImage ChangeImageToColor(UIImage image, nfloat alpha, UIColor color)
+        {
+            var alphaColor = color.ColorWithAlpha(alpha);
+
+            UIGraphics.BeginImageContextWithOptions(image.Size, false, UIScreen.MainScreen.Scale);
+            alphaColor.SetFill();
             image = UIGraphics.GetImageFromCurrentImageContext();
             UIGraphics.EndImageContext();
 
